@@ -1,0 +1,26 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ankitasharma9193/webTech_Technocrates.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ankitasharma9193/webTech_Technocrates/issues"
+  },
+  "homepage": "https://github.com/Ankitasharma9193/webTech_Technocrates#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonfile": "^6.1.0",
+    "mongodb": "^3.6.6",
+    "nodemon": "^2.0.7"
+  }
+}
