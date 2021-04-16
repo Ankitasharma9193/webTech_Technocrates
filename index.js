@@ -87,3 +87,61 @@ app.post("/register", (req, res) => {
     }
 
 })
+
+app.post("/login", (req, res) => {
+    var response = "";
+    var rescode = "";
+
+    var usern = req.body.username;
+    var pass = req.body.password;
+    
+    MongoClient.connect(url, function(err, dbConn) 
+        {  
+            if (err) {
+                console.log("Connection error.")
+                resCode = 404
+                response={result: "Connection not established."}
+                throw err;
+            }
+
+            var dbInstance = dbConn.db("ecommerce");
+
+            var myobj = { email:usern, password:pass };
+
+            dbInstance.collection("register").findOne(myobj, function(err, res2) 
+            {
+                if (err){
+                    
+                    resCode = 404;
+                    response = { result: "failed"}
+                    throw err
+                   
+                }
+                if(res2 == null){
+                    resCode = 201;
+                    response = {result:"User does not exist"}
+                    console.log("User does not exist.")
+                    return res.redirect('Login.html')
+                }
+                else{
+
+                console.log("User exists");  
+                resCode = 200;
+                response = { result: "User exists"}
+                //let token = jwt.sign(myobj,'verySecretValue',{expiresIn:'1h'})
+                
+                dbConn.close();
+                return res.redirect('profile.html')
+                }
+               
+            });
+
+        })        
+    
+    });
+
+
+app.get("/dashboard", (req, res) => {
+
+
+})
