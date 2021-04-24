@@ -1,0 +1,13 @@
+a.pa{
+    display: inline-block;
+    height: 160px;
+}
+
+.row.products .p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table.alignmiddle {
+    vertical-align: middle !important;
+}
