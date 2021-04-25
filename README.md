@@ -7,4 +7,5 @@ Group Members:
 3. Ankita Sharma - C0769708
 
 npm packages required to run the project(if not installed automatically)
+
 npm install --save express path mongoose body-parser express-session express-validator express-fileupload passport mkdirp fs-extra resize-img
